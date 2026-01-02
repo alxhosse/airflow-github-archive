@@ -67,7 +67,7 @@ with DAG(
     dag_id="gh_archive_hourly",
     description="Download and process hourly GH Archive data",
     start_date=pendulum.datetime(2024, 1, 1, tz="UTC"),
-    schedule=CronDataIntervalTimetable("0 * * * *", timezone="UTC"),  # Every hour at minute 0
+    schedule=CronDataIntervalTimetable("10 * * * *", timezone="UTC"),  # Every hour at minute 10
     catchup=False,  # Don't backfill automatically
     default_args={
         "owner": "data-engineering",
